@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.CadastroDeEvento"
+             Title="CadastroDeEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="AntiqueWhite">
+
+    <ScrollView>
+
+        <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10">
+
+            <Label Text="Eventos" FontFamily="Kalam" FontSize="50" TextColor="Brown" />
+
+            <Frame Padding="10" Margin="10">
+                <VerticalStackLayout>
+
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="15" ColumnSpacing="5">
+                        <Label TextColor="Brown" Text="Nome do evento:" Grid.Column="0" HorizontalOptions="Start" Margin="0,0,1,0" />
+                        <Entry Grid.Column="1" WidthRequest="155" x:Name="nome_evento" />
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="15" ColumnSpacing="5">
+                        <Label TextColor="Brown" Text="Local do evento:" Grid.Column="0" HorizontalOptions="Start" Margin="0,0,1,0" />
+                        <Entry Grid.Column="1" WidthRequest="155" x:Name="local_evento"/>
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="15" ColumnSpacing="5">
+                        <Label TextColor="Brown" Text="Custo por participante:" Grid.Column="0" HorizontalOptions="Start" Margin="0,0,1,0" />
+                        <Entry Grid.Column="1" WidthRequest="150" x:Name="custo_paciente"/>
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto, Auto" ColumnSpacing="20" Padding="10" Margin="5">
+                        <Label Grid.Row="0" Grid.Column="0" TextColor="Brown" Text="Número de Participantes:" />
+                        <Label Grid.Row="0" Grid.Column="1" TextColor="Brown" Text="{Binding Value}" BindingContext="{x:Reference numero_participantes}" />
+                        <Stepper Grid.Row="0" Grid.Column="2" x:Name="numero_participantes" Minimum="0" Maximum="10" Increment="1" BackgroundColor="Brown" />
+                    </Grid>
+
+                    <Frame Padding="10" Margin="10">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Período do Evento"
+                           TextColor="Brown"
+                           TextTransform="Uppercase"
+                           FontSize="Micro" />
+
+                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Data de início:"
+                               TextColor="Brown"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Padding="10" />
+                                <DatePicker x:Name="data_inicio"
+                                    Margin="20,0,0,0"
+                                    DateSelected="data_inicio_DateSelected"
+                                    Format="dd/MM/yyyy" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Data de término:"
+                               TextColor="Brown"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Padding="10" />
+                                <DatePicker x:Name="data_termino"
+                                    Margin="10,0,0,0"
+                                    Format="dd/MM/yyyy" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Button Text="Avançar"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="Brown"
+                    HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.DetalhesDoEvento"
+             Title="DetalhesDoEvento"
+             NavigationPage.HasNavigationBar="False"
+            BackgroundColor="AntiqueWhite">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Label
+            Text="{Binding NomeDoEvento}"
+            TextColor="Brown"
+            FontFamily="Kalam"
+            FontSize="50"
+            HorizontalTextAlignment="Center">
+        </Label>
+
+        <Frame Margin="10">
+
+            <StackLayout Orientation="Horizontal">
+
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand">
+                    <Label
+                        Text="Local do evento: "
+                        TextColor="Brown">
+                    </Label>
+
+                    <Label 
+                        Margin="10,0,0,0"
+                        Text="{Binding LocalDoEvento}"
+                        TextColor="Brown">
+                    </Label>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <HorizontalStackLayout HorizontalOptions="StartAndExpand">
+                    <Label
+                        Text="Número de participantes: "                        
+                        TextColor="Brown">
+                    </Label>
+
+                    <Label 
+                        Margin="10,0,0,0"
+                        Text="{Binding NumeroDeParticipante}"
+                        TextColor="Brown">
+                    </Label>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <Grid
+                ColumnDefinitions="*, *, *"
+                RowDefinitions="Auto, Auto">
+
+                <Label
+                    Margin="0,0,20,20"
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Text="Data de início: " 
+                    TextColor="Brown">
+                </Label>
+
+                <Label
+                    Margin="0,0,0,20"
+                    Grid.Row="0" 
+                    Grid.Column="1" 
+                    Text="Data de término: " 
+                    TextColor="Brown">
+                </Label>
+
+                <Label
+                    Grid.Row="0" 
+                    Grid.Column="2" 
+                    Text="Custo por participante: " 
+                    TextColor="Brown">
+                </Label>
+
+
+                <Label
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}">
+                </Label>
+
+                <Label
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}">
+                </Label>
+
+                <Label
+                    Grid.Row="1" 
+                    Grid.Column="2" 
+                    Text="{Binding CustoPorPaciente}">
+                </Label>
+            </Grid>
+        </Frame>
+
+
+        <Frame Margin="10">
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+                <Label
+                    Text="Valor Total: " 
+                    TextColor="Brown">
+                </Label>
+
+                <Label 
+                    Margin="10,0,0,0"
+                    Text="{Binding ValorTotal, StringFormat='{}{0:c}'}">
+                </Label>
+
+            </HorizontalStackLayout>
+
+        </Frame>
+
+        <Button
+            Text="Voltar"
+            HorizontalOptions="Center"
+            Clicked="Button_Clicked"
+            BackgroundColor="Brown">
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>
