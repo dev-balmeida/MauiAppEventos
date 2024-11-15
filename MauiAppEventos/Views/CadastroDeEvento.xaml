@@ -17,22 +17,22 @@
 
                     <Grid RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="15" ColumnSpacing="5">
                         <Label TextColor="Brown" Text="Nome do evento:" Grid.Column="0" HorizontalOptions="Start" Margin="0,0,1,0" />
-                        <Entry Grid.Column="1" WidthRequest="155" x:Name="nome_evento" />
+                        <Entry Grid.Column="1" WidthRequest="155" x:Name="nome_evento" Placeholder="Ex: Programação" BackgroundColor="AntiqueWhite"/>
                     </Grid>
 
                     <Grid RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="15" ColumnSpacing="5">
                         <Label TextColor="Brown" Text="Local do evento:" Grid.Column="0" HorizontalOptions="Start" Margin="0,0,1,0" />
-                        <Entry Grid.Column="1" WidthRequest="155" x:Name="local_evento"/>
+                        <Entry Grid.Column="1" WidthRequest="155" x:Name="local_evento" Placeholder="Ex São Paulo - SP" BackgroundColor="AntiqueWhite"/>
                     </Grid>
 
                     <Grid RowDefinitions="Auto" ColumnDefinitions="*, *" Margin="15" ColumnSpacing="5">
                         <Label TextColor="Brown" Text="Custo por participante:" Grid.Column="0" HorizontalOptions="Start" Margin="0,0,1,0" />
-                        <Entry Grid.Column="1" WidthRequest="150" x:Name="custo_paciente"/>
+                        <Entry Grid.Column="1" WidthRequest="150" x:Name="custo_paciente" Placeholder="Ex: 10" BackgroundColor="AntiqueWhite"/>
                     </Grid>
 
                     <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto, Auto" ColumnSpacing="20" Padding="10" Margin="5">
                         <Label Grid.Row="0" Grid.Column="0" TextColor="Brown" Text="Número de Participantes:" />
-                        <Label Grid.Row="0" Grid.Column="1" TextColor="Brown" Text="{Binding Value}" BindingContext="{x:Reference numero_participantes}" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Value}" BindingContext="{x:Reference numero_participantes}" />
                         <Stepper Grid.Row="0" Grid.Column="2" x:Name="numero_participantes" Minimum="0" Maximum="10" Increment="1" BackgroundColor="Brown" />
                     </Grid>
 

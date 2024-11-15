@@ -49,4 +49,9 @@ public partial class CadastroDeEvento : ContentPage
         data_termino.MinimumDate = data_selecionada_checkin.AddDays(1);
         data_termino.MaximumDate = data_selecionada_checkin.AddMonths(6);
     }
+
+    private void nome_evento_Focused(object sender, FocusEventArgs e)
+    {
+
+    }
 }
